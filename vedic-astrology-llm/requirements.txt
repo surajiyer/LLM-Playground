@@ -1,0 +1,11 @@
+alive-progress
+beautifulsoup4
+python-dotenv
+google
+openai
+pandas
+pydantic
+readability-lxml
+trafilatura
+tzwhere
+# https://pypi.org/project/typer/
