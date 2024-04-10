@@ -1,6 +1,1 @@
-chromadb
-langchain_community
-openai
-pydantic
-python-dotenv
 youtube-transcript-api

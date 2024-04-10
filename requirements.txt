@@ -1,0 +1,7 @@
+alive-progress
+chromadb
+langchain_community
+openai
+pydantic
+python-dotenv
+# https://pypi.org/project/typer/
