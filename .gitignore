@@ -2,7 +2,8 @@
 .idea/
 .DS_Store
 __pycache__
-/data/
-**/data/
+data/**
+!data/**/*.py
 /chroma.db/
 .env
+cache

@@ -38,7 +38,7 @@ def main():
         with alive_bar(len(urls_list)) as bar:
             for url in urls_list:
                 if is_navigation_page(url):
-                    logger.warn(f"Navigation page: {url}")
+                    logger.warning(f"Navigation page: {url}")
                     navigation_links.append(url)
                     continue
                 extract_text(url, output_path='data/txtfiles/data.json')

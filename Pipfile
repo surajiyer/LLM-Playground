@@ -18,9 +18,12 @@ courlan = "*"
 tzwhere = "*"
 pypdf2 = "*"
 beautifulsoup4 = "*"
+kerykeion = "*"
+ipykernel = "*"
 
 [dev-packages]
 pre-commit = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.10"
