@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pip_conf_index_global"
+
+[packages]
+alive-progress = "*"
+chromadb = "*"
+langchain-community = "*"
+openai = "*"
+pydantic = "*"
+python-dotenv = "*"
+# typer = "*"
+
+[dev-packages]
+pre-commit = "*"
+
+[requires]
+python_version = "3.10"
