@@ -1,0 +1,19 @@
+channels:
+  # Add YouTube channel IDs you want to monitor
+  - "UCJ0-OtVpF0wOKEqT2Z1HEtA"  # Example: ElectroBOOM
+  - "UC2eYFnH61tmytImy1mTYvhA"  # Example: Luke Smith
+  # Add more channel IDs here
+
+email:
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  subject: "Daily YouTube Digest - {date}"
+  
+openai:
+  model: "gpt-3.5-turbo"
+  max_tokens: 150
+  temperature: 0.3
+
+limits:
+  max_videos_per_day: 10
+  max_transcript_length: 5000

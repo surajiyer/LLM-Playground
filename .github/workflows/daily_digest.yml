@@ -1,0 +1,43 @@
+name: YouTube Daily Digest
+on:
+  schedule:
+    - cron: "0 6 * * *"   # every day 6 AM UTC
+  workflow_dispatch:       # allow manual run
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+          
+      - name: Set up Python
+        run: uv python install 3.11
+          
+      - name: Install dependencies
+        run: |
+          cd 02-applications/youtube-digest-bot
+          uv sync --frozen
+          
+      - name: Run YouTube digest
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: |
+          cd 02-applications/youtube-digest-bot
+          uv run python src/digest.py
+          
+      - name: Commit and push seen videos
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add 02-applications/youtube-digest-bot/data/seen_videos.txt
+          git diff --staged --quiet || git commit -m "Update seen videos list [skip ci]"
+          git push
