@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gradio-client-example"
+version = "0.1.0"
+description = "Gradio client example for text-to-image generation"
+requires-python = ">=3.8"
+dependencies = [
+    "gradio_client",
+    "python-dotenv",
+    "Pillow",
+]
