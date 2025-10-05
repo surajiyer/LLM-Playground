@@ -14,7 +14,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 sys.path.insert(0, Path(__file__).parent.parent.as_posix())
 
-from general_utils.llm import get_llm  # noqa: E402
+from common.llm import get_llm  # noqa: E402
 
 
 logging.basicConfig(level=logging.INFO)

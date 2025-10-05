@@ -1,0 +1,1 @@
+trafilatura -u "https://xebia.com/blog/enforce-and-validate-llm-output-with-pydantic/" --output-dir vedic-astrology-llm/data --formatting -out xml
